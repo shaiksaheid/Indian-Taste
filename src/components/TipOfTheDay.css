@@ -1,0 +1,66 @@
+.tip-section {
+  background: var(--cream);
+  padding: 0 0 88px;
+}
+
+.tip-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  background: linear-gradient(120deg, var(--peach) 0%, var(--pink) 100%);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  padding: 32px 40px;
+  animation: tip-slide-in 0.6s ease both;
+}
+
+@keyframes tip-slide-in {
+  0% { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.tip-icon {
+  font-size: 30px;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+.tip-body {
+  min-width: 0;
+}
+
+.tip-eyebrow {
+  display: block;
+  color: var(--orange);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.tip-text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--navy);
+}
+
+@media (max-width: 640px) {
+  .tip-card {
+    flex-direction: column;
+    padding: 26px 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tip-card { animation: none; }
+}
