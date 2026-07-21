@@ -1,0 +1,82 @@
+.about {
+  background: linear-gradient(120deg, var(--peach) 0%, var(--pink) 55%, var(--lavender) 100%);
+  padding: 90px 0;
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.about-name {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 14px 0 24px;
+}
+
+.about-content p {
+  color: var(--text-soft);
+  font-size: 15.5px;
+  line-height: 1.7;
+  margin: 0 0 16px;
+  max-width: 560px;
+}
+
+.about-content strong {
+  color: var(--orange);
+  font-weight: 600;
+}
+
+.about-content .btn-pill {
+  margin-top: 12px;
+}
+
+.about-badges {
+  display: flex;
+  gap: 30px;
+  margin-top: 34px;
+}
+
+.about-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.about-badge-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(232, 117, 44, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.about-photo-frame {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 6px solid var(--white);
+  box-shadow: var(--shadow);
+  aspect-ratio: 1 / 1.05;
+}
+
+.about-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .about-inner { grid-template-columns: 1fr; }
+  .about-photo { order: -1; max-width: 320px; margin: 0 auto; }
+  .about-name { font-size: 36px; }
+  .about-badges { flex-wrap: wrap; gap: 20px; }
+}
