@@ -14,9 +14,9 @@ export default function NavBar() {
         <nav className="navbar-links">
           <Link to="/">Home</Link>
           <Link to="/recipes">Recipes</Link>
-          <a href="#categories">Categories</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <Link to="/#categories">Categories</Link>
+          <Link to="/#about">About</Link>
+          <Link to="/#contact">Contact</Link>
         </nav>
       </div>
     </header>
