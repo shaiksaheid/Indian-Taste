@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import './NavBar.css';
 
 export default function NavBar() {
@@ -14,9 +15,18 @@ export default function NavBar() {
         <nav className="navbar-links">
           <Link to="/">Home</Link>
           <Link to="/recipes">Recipes</Link>
-          <Link to="/#categories">Categories</Link>
-          <Link to="/#about">About</Link>
-          <Link to="/#contact">Contact</Link>
+
+          <HashLink smooth to="/#categories">
+            Categories
+          </HashLink>
+
+          <HashLink smooth to="/#about">
+            About
+          </HashLink>
+
+          <HashLink smooth to="/#contact">
+            Contact
+          </HashLink>
         </nav>
       </div>
     </header>
