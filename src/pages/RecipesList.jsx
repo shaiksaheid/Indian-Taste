@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import recipes from '../data/recipes.json';
 import { categories, categoryForId } from '../data/categories';
+import { setPageMeta } from '../utils/seo';
 import './RecipesList.css';
 
 export default function RecipesList() {
@@ -16,6 +17,21 @@ export default function RecipesList() {
   }, [searchParams]);
 
   const activeCategory = slug ? categories.find((c) => c.slug === slug) : null;
+
+  useEffect(() => {
+    if (activeCategory) {
+      setPageMeta({
+        title: `${activeCategory.name} Recipes | Indian Taste`,
+        description: `Browse all ${activeCategory.name} recipes by P. V. Ramana — authentic Andhra vegetarian dishes with full ingredients and step-by-step procedure.`,
+      });
+    } else {
+      setPageMeta({
+        title: 'All Recipes | Indian Taste',
+        description: 'Search and browse the complete collection of 242 authentic Andhra vegetarian recipes by P. V. Ramana.',
+      });
+    }
+    return () => setPageMeta();
+  }, [activeCategory]);
 
   const results = useMemo(() => {
     let list = recipes;

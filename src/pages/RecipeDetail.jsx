@@ -7,6 +7,7 @@ import RecentlyViewedSection from '../components/RecentlyViewedSection';
 import recipes from '../data/recipes.json';
 import { categoryForId } from '../data/categories';
 import { addRecentlyViewed } from '../utils/recentlyViewed';
+import { setPageMeta, setRecipeJsonLd, clearRecipeJsonLd } from '../utils/seo';
 import './RecipeDetail.css';
 
 export default function RecipeDetail() {
@@ -14,7 +15,22 @@ export default function RecipeDetail() {
   const recipe = recipes.find((r) => String(r.id) === id);
 
   useEffect(() => {
-    if (recipe) addRecentlyViewed(recipe.id);
+    if (!recipe) return;
+    const category = categoryForId(recipe.id);
+
+    addRecentlyViewed(recipe.id);
+    setPageMeta({
+      title: `${recipe.title} Recipe | Indian Taste`,
+      description: recipe.subtitle
+        ? `${recipe.subtitle} — ${recipe.title} recipe with full ingredients and step-by-step procedure, by P. V. Ramana.`
+        : `${recipe.title} recipe with full ingredients and step-by-step procedure, by P. V. Ramana.`,
+    });
+    setRecipeJsonLd(recipe, category?.name);
+
+    return () => {
+      clearRecipeJsonLd();
+      setPageMeta();
+    };
   }, [recipe]);
 
   if (!recipe) {
