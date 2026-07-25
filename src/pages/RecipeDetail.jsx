@@ -1,13 +1,21 @@
+import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+import RelatedRecipes from '../components/RelatedRecipes';
+import RecentlyViewedSection from '../components/RecentlyViewedSection';
 import recipes from '../data/recipes.json';
 import { categoryForId } from '../data/categories';
+import { addRecentlyViewed } from '../utils/recentlyViewed';
 import './RecipeDetail.css';
 
 export default function RecipeDetail() {
   const { id } = useParams();
   const recipe = recipes.find((r) => String(r.id) === id);
+
+  useEffect(() => {
+    if (recipe) addRecentlyViewed(recipe.id);
+  }, [recipe]);
 
   if (!recipe) {
     return (
@@ -71,6 +79,9 @@ export default function RecipeDetail() {
             </div>
           </div>
         </div>
+
+        <RelatedRecipes currentId={recipe.id} category={category} />
+        <RecentlyViewedSection currentId={recipe.id} />
       </section>
       <Footer />
     </>
