@@ -9,11 +9,13 @@ export default function NavBar() {
         <Link to="/" className="navbar-logo">
           <img src="/favicon.png" alt="" className="navbar-logo-icon" />
           <span className="navbar-logo-text">
-            Indian <span className="navbar-logo-highlight">Taste</span>
+            Andhra Vegetarian <span className="navbar-logo-highlight">Recipes</span>
           </span>
         </Link>
         <nav className="navbar-links">
-          <Link to="/">Home</Link>
+          <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            Home
+          </Link>
           <Link to="/recipes">Recipes</Link>
 
           <HashLink smooth to="/#categories">

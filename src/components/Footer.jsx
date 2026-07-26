@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { categories } from '../data/categories';
 import './Footer.css';
 
@@ -7,15 +8,15 @@ export default function Footer() {
     <footer className="footer" id="contact">
       <div className="container footer-inner">
         <div className="footer-brand">
-          <span className="footer-logo">Indian <span>Taste</span></span>
-          <p>Authentic Telugu vegetarian recipes from P. V. Ramana's kitchen to yours.</p>
+          <span className="footer-logo">Andhra Vegetarian <span>Recipes</span></span>
+          <p>Authentic South Indian &amp; Andhra vegetarian recipes, Telugu-style, from P. V. Ramana's kitchen to yours.</p>
         </div>
 
         <div className="footer-col">
           <h4>Explore</h4>
           <Link to="/recipes">All Recipes</Link>
-          <a href="#categories">Categories</a>
-          <a href="#about">About</a>
+          <HashLink smooth to="/#about">About the Author</HashLink>
+          <HashLink smooth to="/#categories">Categories</HashLink>
         </div>
 
         <div className="footer-col">
@@ -27,17 +28,17 @@ export default function Footer() {
 
         <div className="footer-col">
           <h4>Contact</h4>
-          <a href="mailto:shaikshaheid8@gmail.com">shaikshaheid8@gmail.com</a>
-          <span>Hyderabad, Telanagana</span>
+          <a href="mailto:pssrinivas1@gmail.com">pssrinivas1@gmail.com</a>
+          <span>Hyderabad, Telangana</span>
         </div>
       </div>
 
       <div className="footer-bottom">
         <div className="container">
-          &copy; {new Date().getFullYear()} Indian Taste. All recipes by P. V. Ramana.
+          &copy; {new Date().getFullYear()} Andhra Vegetarian Recipes. All recipes by P. V. Ramana.
         </div>
         <div className="container footer-dev">
-          Developed with ❤️ in Hyderabad &mdash; Shaik Shaheid ·{' '}
+          Developed with ❤️ from Hyderabad &mdash; Shaik Shaheid ·{' '}
           <a href="mailto:shaikshaheid8@gmail.com">shaikshaheid8@gmail.com</a>
         </div>
       </div>

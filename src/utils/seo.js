@@ -1,22 +1,47 @@
-const DEFAULT_TITLE = 'Indian Taste — Andhra Vegetarian Recipes by P. V. Ramana';
+const DEFAULT_TITLE = 'Andhra Vegetarian Recipes | South Indian & Telugu Cooking by P. V. Ramana';
 const DEFAULT_DESCRIPTION =
-  '242 authentic Andhra vegetarian recipes by P. V. Ramana — sweets, pickles, dosas, ' +
-  'pappu, and more, with ingredients, step-by-step procedure, and an ingredient-based search.';
+  '242 authentic South Indian & Andhra recipes by P. V. Ramana — Telugu-style sweets, ' +
+  'pickles, dosas, curries, pappu and more. Search any recipe by name or ingredient.';
 
+// Updates the document title, meta description, and matching Open Graph /
+// Twitter tags for the current page. Call with no arguments (or omit a
+// field) to fall back to the site defaults.
 export function setPageMeta({ title, description } = {}) {
-  document.title = title || DEFAULT_TITLE;
+  const finalTitle = title || DEFAULT_TITLE;
+  const finalDescription = description || DEFAULT_DESCRIPTION;
 
-  let tag = document.querySelector('meta[name="description"]');
+  document.title = finalTitle;
+  setMetaByName('description', finalDescription);
+  setMetaByProperty('og:title', finalTitle);
+  setMetaByProperty('og:description', finalDescription);
+  setMetaByName('twitter:title', finalTitle);
+  setMetaByName('twitter:description', finalDescription);
+}
+
+function setMetaByName(name, content) {
+  let tag = document.querySelector(`meta[name="${name}"]`);
   if (!tag) {
     tag = document.createElement('meta');
-    tag.setAttribute('name', 'description');
+    tag.setAttribute('name', name);
     document.head.appendChild(tag);
   }
-  tag.setAttribute('content', description || DEFAULT_DESCRIPTION);
+  tag.setAttribute('content', content);
+}
+
+function setMetaByProperty(property, content) {
+  let tag = document.querySelector(`meta[property="${property}"]`);
+  if (!tag) {
+    tag = document.createElement('meta');
+    tag.setAttribute('property', property);
+    document.head.appendChild(tag);
+  }
+  tag.setAttribute('content', content);
 }
 
 const JSONLD_SCRIPT_ID = 'recipe-jsonld';
 
+// Injects (or updates) a schema.org Recipe JSON-LD <script> tag for the
+// current recipe, so Google can show rich recipe results in search.
 export function setRecipeJsonLd(recipe, categoryName) {
   const data = {
     '@context': 'https://schema.org/',
@@ -28,7 +53,7 @@ export function setRecipeJsonLd(recipe, categoryName) {
       name: 'P. V. Ramana',
     },
     recipeCategory: categoryName || undefined,
-    recipeCuisine: 'Andhra, Indian',
+    recipeCuisine: 'South Indian, Andhra, Telugu, Indian',
     recipeIngredient: (recipe.ingredients || []).map((ing) =>
       ing.quantity ? `${ing.name} - ${ing.quantity}` : ing.name
     ),

@@ -28,32 +28,31 @@
 
 
 .navbar-inner {
-  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
+  gap: 24px;
   height: 76px;
-  padding: 0 40px;
+  padding: 0 32px;
 }
 
 /* Logo on left */
 .navbar-logo {
-  position: absolute;
-  left: 40px;
   display: flex;
   align-items: center;
   gap: 2px;
+  flex-shrink: 0;
 
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 24px;
+  font-size: 22px;
   color: var(--navy);
   text-decoration: none;
 }
 
 .navbar-logo-icon {
-  width: 94px;
-  height: 94px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -66,13 +65,16 @@
   color: var(--orange);
 }
 
-/* Links perfectly centered */
+/* Links centered in the remaining space next to the logo */
 .navbar-links {
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 36px;
+  justify-content: center;
+  gap: 32px;
   font-weight: 500;
   font-size: 15px;
+  min-width: 0;
 }
 
 .navbar-links a {
@@ -80,6 +82,7 @@
   text-decoration: none;
   opacity: 0.85;
   transition: 0.3s;
+  white-space: nowrap;
 }
 
 .navbar-links a:hover {
@@ -111,8 +114,6 @@
 
   /* Logo */
   .navbar-logo {
-    position: static;
-    left: auto;
     font-size: 16px;
     display: flex;
     align-items: center;
@@ -128,6 +129,7 @@
 
   /* Navigation */
   .navbar-links {
+    flex: none;
     display: grid;
     grid-template-columns: repeat(3, auto);
     justify-content: center;

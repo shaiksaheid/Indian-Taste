@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { IconBook } from './icons';
 import './ExploreSection.css';
 
 export default function ExploreSection() {
@@ -8,7 +9,7 @@ export default function ExploreSection() {
         <h2>242 recipes. One kitchen. A lifetime of tradition.</h2>
         <p>Every dish tested, written down, and passed on &mdash; from her kitchen to yours.</p>
         <Link to="/recipes" className="btn-pill explore-btn">
-          <span>📖</span> Explore Complete Recipes
+          <IconBook /> Explore Complete Recipes
         </Link>
       </div>
     </section>

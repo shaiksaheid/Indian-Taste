@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { IconBook } from './icons';
 import './AboutAuthor.css';
 
 export default function AboutAuthor() {
@@ -11,15 +12,15 @@ export default function AboutAuthor() {
 
           <p>
             P. V. Ramana is a widely respected culinary author known for bringing{' '}
-            <strong>authentic Telugu vegetarian cuisine</strong> to readers through her
-            thoughtfully crafted recipes and deep understanding of traditional cooking
-            methods.
+            <strong>authentic Andhra and South Indian vegetarian cuisine</strong> to readers
+            through her thoughtfully crafted recipes and deep understanding of traditional
+            Telugu cooking methods.
           </p>
           <p>
             Born in the East Godavari region of Andhra Pradesh, her culinary journey
             evolved through years of travel across India and abroad, where she shared
-            the richness of Telugu cooking with families from different cultures and
-            communities.
+            the richness of Andhra-style cooking and South Indian cuisine with families
+            from different cultures and communities.
           </p>
           <p>
             Her recipes are admired for their simplicity, authenticity, and
@@ -28,14 +29,9 @@ export default function AboutAuthor() {
             programs, and cultural events, earning appreciation from food lovers
             globally.
           </p>
-          <p>
-            This platform celebrates her timeless recipes by transforming them into a
-            modern digital culinary experience while preserving the warmth and heritage
-            of traditional Indian home cooking.
-          </p>
 
           <Link to="/recipes" className="btn-pill">
-            <span>📖</span> Explore Her Recipes
+            <IconBook /> Explore Her Recipes
           </Link>
 
           <div className="about-badges">

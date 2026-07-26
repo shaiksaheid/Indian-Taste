@@ -20,7 +20,7 @@ export default function RecipeDetail() {
 
     addRecentlyViewed(recipe.id);
     setPageMeta({
-      title: `${recipe.title} Recipe | Indian Taste`,
+      title: `${recipe.title} Recipe | Andhra Vegetarian Recipes`,
       description: recipe.subtitle
         ? `${recipe.subtitle} — ${recipe.title} recipe with full ingredients and step-by-step procedure, by P. V. Ramana.`
         : `${recipe.title} recipe with full ingredients and step-by-step procedure, by P. V. Ramana.`,
@@ -68,7 +68,7 @@ export default function RecipeDetail() {
           </div>
 
           <div className="recipe-print-header">
-            <p className="recipe-print-brand">Indian Taste &mdash; Recipe by P. V. Ramana</p>
+            <p className="recipe-print-brand">Andhra Vegetarian Recipes &mdash; Recipe by P. V. Ramana</p>
           </div>
 
           <div className="recipe-detail-header">

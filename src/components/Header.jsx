@@ -37,12 +37,12 @@ export default function Header() {
         </div>
 
         <div className="hero-content">
-          <span className="eyebrow">✦ Homestyle Telugu Cooking ✦</span>
+          <span className="eyebrow">✦ Homestyle Andhra Cooking ✦</span>
           <h1 className="hero-title">
             Recipes made with <span>love</span>,<br /> served with tradition
           </h1>
           <p className="hero-subtitle">
-            Authentic vegetarian recipes from P. V. Ramana &mdash; sweets to
+            Authentic Andhra vegetarian recipes from P. V. Ramana &mdash; sweets to
             pickles, dosas to pappu, all in one place.
           </p>
 

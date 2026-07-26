@@ -4,6 +4,7 @@ import CategoriesSection from '../components/CategoriesSection';
 import TipOfTheDay from '../components/TipOfTheDay';
 import ExploreSection from '../components/ExploreSection';
 import ReviewsSection from '../components/ReviewsSection';
+import BookPromo from '../components/BookPromo';
 import AboutAuthor from '../components/AboutAuthor';
 import Footer from '../components/Footer';
 
@@ -16,6 +17,7 @@ export default function Home() {
       <TipOfTheDay />
       <ExploreSection />
       <ReviewsSection />
+      <BookPromo />
       <AboutAuthor />
       <Footer />
     </>

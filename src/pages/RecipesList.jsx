@@ -21,13 +21,13 @@ export default function RecipesList() {
   useEffect(() => {
     if (activeCategory) {
       setPageMeta({
-        title: `${activeCategory.name} Recipes | Indian Taste`,
-        description: `Browse all ${activeCategory.name} recipes by P. V. Ramana — authentic Andhra vegetarian dishes with full ingredients and step-by-step procedure.`,
+        title: `${activeCategory.name} Recipes | Andhra Vegetarian Recipes | South Indian & Telugu Cooking`,
+        description: `Browse all ${activeCategory.name} recipes by P. V. Ramana — authentic South Indian, Andhra and Telugu-style vegetarian dishes with full ingredients and step-by-step procedure.`,
       });
     } else {
       setPageMeta({
-        title: 'All Recipes | Indian Taste',
-        description: 'Search and browse the complete collection of 242 authentic Andhra vegetarian recipes by P. V. Ramana.',
+        title: 'All Recipes | Andhra Vegetarian Recipes | South Indian & Telugu Cooking',
+        description: 'Search and browse the complete collection of 242 authentic South Indian and Andhra vegetarian recipes by P. V. Ramana.',
       });
     }
     return () => setPageMeta();
