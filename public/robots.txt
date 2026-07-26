@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://indiantaste.vercel.app/sitemap.xml
+Sitemap: https://andhravegetarianrecipes.com//sitemap.xml
