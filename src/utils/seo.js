@@ -3,8 +3,6 @@ const DEFAULT_DESCRIPTION =
   '242 authentic Andhra vegetarian recipes by P. V. Ramana — sweets, pickles, dosas, ' +
   'pappu, and more, with ingredients, step-by-step procedure, and an ingredient-based search.';
 
-// Updates the document title and meta description for the current page.
-// Call with no arguments (or omit a field) to fall back to the site defaults.
 export function setPageMeta({ title, description } = {}) {
   document.title = title || DEFAULT_TITLE;
 
@@ -19,8 +17,6 @@ export function setPageMeta({ title, description } = {}) {
 
 const JSONLD_SCRIPT_ID = 'recipe-jsonld';
 
-// Injects (or updates) a schema.org Recipe JSON-LD <script> tag for the
-// current recipe, so Google can show rich recipe results in search.
 export function setRecipeJsonLd(recipe, categoryName) {
   const data = {
     '@context': 'https://schema.org/',

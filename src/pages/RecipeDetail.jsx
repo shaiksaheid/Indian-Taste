@@ -54,9 +54,22 @@ export default function RecipeDetail() {
       <NavBar />
       <section className="recipe-detail">
         <div className="container">
-          <Link to={`/recipes/category/${category?.slug}`} className="recipe-back">
-            ← {category?.name || 'All Recipes'}
-          </Link>
+          <div className="recipe-detail-toolbar no-print">
+            <Link to={`/recipes/category/${category?.slug}`} className="recipe-back">
+              ← {category?.name || 'All Recipes'}
+            </Link>
+            <button
+              type="button"
+              className="btn-pill print-btn"
+              onClick={() => window.print()}
+            >
+              🖨️ Print / Save as PDF
+            </button>
+          </div>
+
+          <div className="recipe-print-header">
+            <p className="recipe-print-brand">Indian Taste &mdash; Recipe by P. V. Ramana</p>
+          </div>
 
           <div className="recipe-detail-header">
             {category?.icon ? (
@@ -96,8 +109,10 @@ export default function RecipeDetail() {
           </div>
         </div>
 
-        <RelatedRecipes currentId={recipe.id} category={category} />
-        <RecentlyViewedSection currentId={recipe.id} />
+        <div className="no-print">
+          <RelatedRecipes currentId={recipe.id} category={category} />
+          <RecentlyViewedSection currentId={recipe.id} />
+        </div>
       </section>
       <Footer />
     </>
