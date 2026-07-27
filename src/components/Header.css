@@ -5,29 +5,88 @@
 
 .hero-inner {
   display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: 64px;
+  grid-template-columns: 1fr 380px;
+  gap: 56px;
   align-items: center;
 }
 
-.hero-photo {
-  margin-left: 24px;
+/* --- Rotating South Indian food motif (replaces the author photo) --- */
+.hero-motif {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  margin: 0 auto;
 }
 
-.hero-photo-frame {
-  width: 100%;
-  aspect-ratio: 1 / 1.05;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  border: 6px solid var(--white);
-  box-shadow: var(--shadow);
+.motif-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px dashed rgba(232, 117, 44, 0.35);
+  animation: motif-spin 28s linear infinite;
+}
+
+.motif-icon-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform: rotate(var(--angle));
+}
+
+.motif-icon-offset {
+  position: absolute;
+  left: 158px;
+  top: 0;
+  transform: translate(-50%, -50%) rotate(calc(-1 * var(--angle)));
+  animation: motif-counter-spin 28s linear infinite;
+}
+
+@keyframes motif-counter-spin {
+  from { transform: translate(-50%, -50%) rotate(calc(-1 * var(--angle))); }
+  to { transform: translate(-50%, -50%) rotate(calc(-1 * var(--angle) - 360deg)); }
+}
+
+.motif-icon-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
   background: var(--white);
+  box-shadow: var(--shadow);
+  color: var(--orange);
 }
 
-.hero-photo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.motif-center {
+  position: absolute;
+  inset: 50px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.motif-center-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--navy);
+  line-height: 1.3;
+}
+
+@keyframes motif-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motif-ring, .motif-icon-offset { animation: none; }
 }
 
 .hero-title {
@@ -141,8 +200,10 @@
 
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-photo { margin-left: 0; }
-  .hero-photo-frame { max-width: 280px; margin: 0 auto; }
+  .hero-motif { order: -1; width: 260px; height: 260px; }
+  .motif-icon-offset { left: 120px; }
+  .motif-center { inset: 38px; }
+  .motif-center-label { font-size: 16px; }
   .hero-title { font-size: 34px; }
   .hero-search { flex-wrap: wrap; border-radius: 24px; }
   .hero-search .btn-pill { width: 100%; justify-content: center; }

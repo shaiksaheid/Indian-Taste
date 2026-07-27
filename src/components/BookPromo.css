@@ -191,6 +191,14 @@
   color: var(--orange);
 }
 
+.book-order-contact-link.whatsapp svg {
+  color: #25d366;
+}
+
+.book-order-contact-link.whatsapp:hover {
+  color: #1fa855;
+}
+
 .book-fineprint {
   max-width: 520px;
   font-size: 12px;
