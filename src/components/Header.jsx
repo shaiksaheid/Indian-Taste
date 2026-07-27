@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { IconLeaf, IconHeart, IconStar } from './icons';
 import './Header.css';
 
 const PLACEHOLDERS = [
@@ -37,13 +38,14 @@ export default function Header() {
         </div>
 
         <div className="hero-content">
-          <span className="eyebrow">✦ Homestyle Andhra Cooking ✦</span>
+          <span className="eyebrow">✦ South Indian &amp; Andhra Style Cooking ✦</span>
           <h1 className="hero-title">
             Recipes made with <span>love</span>,<br /> served with tradition
           </h1>
           <p className="hero-subtitle">
-            Authentic Andhra vegetarian recipes from P. V. Ramana &mdash; sweets to
-            pickles, dosas to pappu, all in one place.
+            Authentic South Indian &amp; Andhra recipes by{' '}
+            <span className="no-wrap">P. V. Ramana</span> &mdash;
+            sweets to pickles, dosas to pappu, all in one place.
           </p>
 
           <form className="hero-search" onSubmit={handleSearch}>
@@ -72,9 +74,9 @@ export default function Header() {
           </form>
 
           <div className="hero-badges">
-            <span className="hero-badge">🌿 Authentic Recipes</span>
-            <span className="hero-badge">❤️ Made with Tradition</span>
-            <span className="hero-badge">⭐ Loved by Thousands</span>
+            <span className="hero-badge"><IconLeaf className="hero-badge-icon leaf" /> Authentic Recipes</span>
+            <span className="hero-badge"><IconHeart className="hero-badge-icon heart" /> Made with Tradition</span>
+            <span className="hero-badge"><IconStar className="hero-badge-icon star" /> Loved by Thousands</span>
           </div>
         </div>
       </div>

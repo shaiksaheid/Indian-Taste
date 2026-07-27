@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { IconBook } from './icons';
+import { IconBook, IconLeaf, IconHeart, IconStar } from './icons';
 import './AboutAuthor.css';
 
 export default function AboutAuthor() {
@@ -7,7 +7,7 @@ export default function AboutAuthor() {
     <section className="about" id="about">
       <div className="container about-inner">
         <div className="about-content">
-          <span className="eyebrow">🌿 About the Author 🌿</span>
+          <span className="eyebrow"><IconLeaf className="eyebrow-leaf" /> About the Author <IconLeaf className="eyebrow-leaf" /></span>
           <h2 className="about-name">P. V. Ramana</h2>
 
           <p>
@@ -36,15 +36,15 @@ export default function AboutAuthor() {
 
           <div className="about-badges">
             <div className="about-badge">
-              <span className="about-badge-icon">🌿</span>
+              <span className="about-badge-icon"><IconLeaf /></span>
               <span>Authentic<br />Recipes</span>
             </div>
             <div className="about-badge">
-              <span className="about-badge-icon">❤️</span>
+              <span className="about-badge-icon"><IconHeart /></span>
               <span>Made with<br />Tradition</span>
             </div>
             <div className="about-badge">
-              <span className="about-badge-icon">⭐</span>
+              <span className="about-badge-icon"><IconStar /></span>
               <span>Loved by<br />Thousands</span>
             </div>
           </div>

@@ -1,5 +1,8 @@
 .about {
-  background: linear-gradient(120deg, var(--peach) 0%, var(--pink) 55%, var(--lavender) 100%);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.45), transparent 42%),
+    linear-gradient(rgba(28, 35, 64, 0.1), rgba(28, 35, 64, 0.1)),
+    linear-gradient(120deg, var(--peach) 0%, var(--pink) 55%, var(--lavender) 100%);
   padding: 90px 0;
 }
 
@@ -58,6 +61,31 @@
   justify-content: center;
   font-size: 16px;
   flex-shrink: 0;
+}
+
+.about-badge-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.about-badge:nth-child(1) .about-badge-icon {
+  background: rgba(58, 158, 90, 0.14);
+  color: #2f9e5c;
+}
+
+.about-badge:nth-child(2) .about-badge-icon {
+  background: rgba(232, 64, 87, 0.12);
+  color: #e5405e;
+}
+
+.about-badge:nth-child(3) .about-badge-icon {
+  background: rgba(245, 166, 35, 0.16);
+  color: #f0a520;
+}
+
+.eyebrow-leaf {
+  color: #2f9e5c;
+  vertical-align: -2px;
 }
 
 .about-photo-frame {

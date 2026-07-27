@@ -62,6 +62,33 @@ export function IconCart(props) {
   );
 }
 
+export function IconLeaf(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" {...props}>
+      <path d="M20 3c-8 0-14 5.5-14 13 0 2 .4 3.6 1 5 1.4-4.8 4.6-8.7 9-11-3.6 2.9-6 7-6.8 11.6C10.8 21.6 12.4 22 14 22c7.5 0 13-6 13-14 0-1.8-.2-3.6-.6-5-2 0-4.3-.1-6.4 0Z" />
+    </svg>
+  );
+}
+
+export function IconHeart(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" {...props}>
+      <path d="M12 21s-7.5-4.6-10.2-9.3C.2 8.9 1.3 5.4 4.6 4.2c2-.7 4.1 0 5.4 1.7l2 2.6 2-2.6c1.3-1.7 3.4-2.4 5.4-1.7 3.3 1.2 4.4 4.7 2.8 7.5C19.5 16.4 12 21 12 21Z" />
+    </svg>
+  );
+}
+
+export function IconBulb(props) {
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+      strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <path d="M9 18h6" />
+      <path d="M10 22h4" />
+      <path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2.05V17h6v-2.25c0-.85.4-1.55 1-2.05A7 7 0 0 0 12 2Z"
+        fill="currentColor" fillOpacity="0.18" />
+    </svg>
+  );
+}
 export function IconMail(props) {
   return (
     <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor"

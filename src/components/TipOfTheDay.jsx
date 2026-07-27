@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { tips, tipIndexForToday } from '../data/tips';
+import { IconBulb } from './icons';
 import './TipOfTheDay.css';
 
 const todayLabel = () =>
@@ -28,7 +29,7 @@ export default function TipOfTheDay() {
     <section className="tip-section">
       <div className="container">
         <div className="tip-card" key={tipIndex}>
-          <div className="tip-icon">💡</div>
+          <div className="tip-icon"><IconBulb /></div>
           <div className="tip-body">
             <span className="tip-eyebrow">Tip for {dateLabel}</span>
             <p className="tip-text">{tips[tipIndex]}</p>

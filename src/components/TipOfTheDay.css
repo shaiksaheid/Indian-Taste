@@ -20,8 +20,6 @@
 }
 
 .tip-icon {
-  font-size: 30px;
-  line-height: 1;
   flex-shrink: 0;
   width: 56px;
   height: 56px;
@@ -31,6 +29,23 @@
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow);
+  color: #f0a520;
+  animation: bulb-glow 2.4s ease-in-out infinite;
+}
+
+@keyframes bulb-glow {
+  0%, 100% {
+    box-shadow: var(--shadow), 0 0 0 0 rgba(240, 165, 32, 0.45);
+  }
+  50% {
+    box-shadow: var(--shadow), 0 0 16px 6px rgba(240, 165, 32, 0.55);
+  }
+}
+
+.tip-icon svg {
+  width: 26px;
+  height: 26px;
+  filter: drop-shadow(0 0 3px rgba(240, 165, 32, 0.6));
 }
 
 .tip-body {
