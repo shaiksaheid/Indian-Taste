@@ -38,7 +38,7 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Andhra Vegetarian Recipes. All recipes by P. V. Ramana.
         </div>
         <div className="container footer-dev">
-          Developed with ❤️ from Hyderabad &mdash; Shaik Shaheid ·{' '}
+          Developed with ❤️ in Hyderabad &mdash; Shaik Shaheid ·{' '}
           <a href="mailto:shaikshaheid8@gmail.com">shaikshaheid8@gmail.com</a>
         </div>
       </div>
