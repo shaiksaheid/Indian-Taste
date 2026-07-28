@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import introVideo from '../assets/videos/intro.mp4';
 import './SplashScreen.css';
 
-const DISPLAY_DURATION = 1000; // ms the splash stays fully visible
+const DISPLAY_DURATION = 1500; // ms the splash stays fully visible
 const FADE_DURATION = 700; // ms fade-to-home transition
 
 export default function SplashScreen({ onFinish }) {
