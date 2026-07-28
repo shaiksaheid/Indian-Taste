@@ -140,6 +140,9 @@
   font-size: 13.5px;
   line-height: 1.55;
   color: var(--text-soft);
+
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 @media (max-width: 900px) {

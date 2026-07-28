@@ -25,6 +25,8 @@
   line-height: 1.7;
   margin: 0 0 16px;
   max-width: 560px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .about-content strong {

@@ -102,6 +102,11 @@
   margin: 0 0 22px;
 }
 
+.book-content p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .book-facts {
   display: flex;
   flex-wrap: wrap;

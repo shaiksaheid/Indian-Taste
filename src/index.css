@@ -34,9 +34,13 @@ a { text-decoration: none; color: inherit; }
 button { font-family: inherit; cursor: pointer; }
 img { max-width: 100%; display: block; }
 
-p {
-  text-align: justify;
-  text-justify: inter-word;
+
+.explore p {
+  text-align: center;
+}
+
+.footer p {
+  text-align: left;
 }
 
 .hero p {
@@ -106,6 +110,47 @@ input:focus-visible {
   border-radius: var(--radius-full);
   font-weight: 600;
   font-size: 14px;
+}
+
+
+/* Chrome, Edge & Safari */
+::-webkit-scrollbar {
+  width: 8px;      /* Reduced from 12px */
+  height: 8px;
+}
+
+/* Cream Track */
+::-webkit-scrollbar-track {
+  background: #fdf6ee;
+  border-radius: 10px;
+}
+
+/* Orange Thumb */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #f29a5a 0%,
+    #e8752c 50%,
+    #d9651f 100%
+  );
+  border-radius: 10px;
+  border: 1px solid #fdf6ee; /* Reduced from 2px */
+}
+
+/* Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    #ffb27a 0%,
+    #e8752c 40%,
+    #c85614 100%
+  );
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #e8752c #fdf6ee;
 }
 
 @media (max-width: 768px) {
