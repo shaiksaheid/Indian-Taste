@@ -20,18 +20,28 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; overflow-x: hidden; }
 
 body {
   font-family: var(--font-body);
   color: var(--navy);
   background: var(--cream);
   -webkit-font-smoothing: antialiased;
+  padding-top: 116px;
 }
 
 a { text-decoration: none; color: inherit; }
 button { font-family: inherit; cursor: pointer; }
 img { max-width: 100%; display: block; }
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.hero p {
+  text-align: left;
+}
 
 .container {
   width: 100%;
@@ -98,9 +108,10 @@ input:focus-visible {
   font-size: 14px;
 }
 
-
-body {
-  padding-top: 110px; 
+@media (max-width: 768px) {
+  body {
+    padding-top: 78px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

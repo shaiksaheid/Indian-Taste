@@ -67,6 +67,8 @@ export default function RecipeDetail() {
             </button>
           </div>
 
+          <img className="recipe-print-watermark" src="/favicon.png" alt="" />
+
           <div className="recipe-print-header">
             <p className="recipe-print-brand">Andhra Vegetarian Recipes &mdash; Recipe by P. V. Ramana</p>
           </div>

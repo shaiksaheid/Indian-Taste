@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { IconLeaf, IconHeart, IconStar, IconChili, IconCoconut, IconBowl, IconSpices, IconLotus } from './icons';
+import { IconLeaf, IconHeart, IconStar } from './icons';
 import './Header.css';
 
 const PLACEHOLDERS = [
   'Search by recipe name...',
   'Search by ingredient you have...',
 ];
-
-const MOTIF_ICONS = [IconChili, IconCoconut, IconLeaf, IconBowl, IconSpices, IconLotus];
 
 export default function Header() {
   const [query, setQuery] = useState('');
@@ -77,23 +75,14 @@ export default function Header() {
         </div>
 
         <div className="hero-motif" aria-hidden="true">
-          <div className="motif-ring">
-            {MOTIF_ICONS.map((Icon, i) => (
-              <div
-                className="motif-icon-position"
-                style={{ '--angle': `${i * (360 / MOTIF_ICONS.length)}deg` }}
-                key={i}
-              >
-                <div className="motif-icon-offset">
-                  <span className="motif-icon-badge">
-                    <Icon />
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="motif-center">
-            <span className="motif-center-label">Andhra<br />Flavours</span>
+          <div className="motif-outer-ring" />
+          <div className="motif-glow" />
+          <div className="motif-image-wrap">
+            <img
+              src="/andhra-thali-spread.png"
+              alt=""
+              className="motif-image"
+            />
           </div>
         </div>
       </div>
