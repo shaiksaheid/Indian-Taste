@@ -78,6 +78,9 @@ export default function NavBar() {
           <HashLink smooth to="/#contact" onClick={closeMenu}>
             Contact
           </HashLink>
+          <HashLink smooth to="/#book" onClick={closeMenu}>
+            Order
+          </HashLink>
         </nav>
       </div>
     </header>
